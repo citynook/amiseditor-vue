@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
-
+import copy from 'rollup-plugin-copy'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 //import  { monacoEditorPlugin } from 'vite-plugin-monaco-editor';
@@ -8,6 +8,14 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [
     vue(),
+    copy({
+      targets: [
+        {
+          src: './node_modules/amis/sdk/**/*',
+          dest: 'public/amis-sdk'
+        }
+      ]
+    })
     //monacoEditorPlugin({}),
   ],
   resolve: {

@@ -1,20 +1,14 @@
 <template>
- 
  <div>
-  <!--
   <editor ref="editorRef" :isPreview="isPreview" 
                 :is-mobile="isMobile" @reload="handleReload" @save="handleSave" />
--->
- </div>
- <div >
-  <!--
-  <TemeEditor ref="themeEditorRef" @save="handleSave" />
--->
-</div>
 
+ </div>
+   <!--
  <div>
   <AmisRenderer :schema="schema" />
  </div>
+-->
 </template>
 
 <script lang="ts">
@@ -23,19 +17,17 @@
 //import { Editor, setThemeConfig } from 'amis-editor';
 import ThemeEditor from 'amis-theme-editor';
 import Editor from './AmisEditor.vue';
-import TemeEditor from './AmisThemeEditor.vue';
 import AmisRenderer from './AmisRenderer.vue';
 import AmisDemo from './AmisDemo.vue';
 
 export default defineComponent({
     //components: { BasicModal, Editor, ShortcutKey: applyPureReactInVue(ShortcutKey) },
-    components: { Editor, TemeEditor, AmisRenderer },
+    components: { Editor, AmisRenderer },
     emits: ['reload', 'save', 'register'],
     setup(_, { emit }) {
       const isPreview = ref(false);
       const isMobile = ref(false);
       const editorRef = ref<any>(null);
-      const themeEditorRef = ref<any>(null);
       const schema = ref<Object>();
       schema.value = AmisDemo;
 
@@ -65,7 +57,6 @@ export default defineComponent({
 
       return {
         editorRef,
-        themeEditorRef,
         isPreview,
         isMobile,
         schema,

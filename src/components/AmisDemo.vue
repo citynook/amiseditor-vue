@@ -13,6 +13,12 @@ export default {
       // debug: true,
       autoFocus: true,
       body: [
+      {
+          type: 'input-color',
+          name: 'color',
+          inline: true,
+          label: 'Color'
+        },
         {
           type: 'html',
           html: '<p>html 片段, 可以用来添加说明性文字</p>'
@@ -1693,7 +1699,13 @@ export default {
               level: 'success'
             }
           ]
-        }
+        },
+        {
+          type: 'input-color',
+          name: 'color',
+          inline: true,
+          label: 'Color'
+        },
       ],
       actions: [
         {
