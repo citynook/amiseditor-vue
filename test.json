@@ -1,0 +1,522 @@
+{
+    "type": "page",
+    "title": "新页面",
+    "body": [
+        {
+            "type": "crud",
+            "syncLocation": false,
+            "api": {
+                "method": "get",
+                "url": "",
+                "messages": {},
+                "dataType": "form",
+                "responseData": {
+                    "items": "${result.records}",
+                    "total": "${result.total}"
+                }
+            },
+            "columns": [
+                {
+                    "label": "id",
+                    "type": "text",
+                    "name": "id",
+                    "id": "u:21ae48d094b2",
+                    "inline": true,
+                    "hidden": true
+                },
+                {
+                    "label": "页面编码",
+                    "type": "text",
+                    "name": "pageCode",
+                    "id": "u:b2087fb8c7f5"
+                },
+                {
+                    "label": "页面名称",
+                    "type": "text",
+                    "name": "pageName",
+                    "id": "u:fe5010de0220"
+                },
+                {
+                    "label": "设计方式",
+                    "type": "text",
+                    "name": "pageDesignMode",
+                    "id": "u:9d4530893076",
+                    "inline": true,
+                    "tpl": ""
+                },
+                {
+                    "label": "页面主题",
+                    "type": "text",
+                    "name": "pageTheme",
+                    "id": "u:5d7bc82da992",
+                    "inline": true,
+                    "tpl": ""
+                },
+                {
+                    "label": "备注",
+                    "type": "text",
+                    "name": "remark",
+                    "id": "u:6ec1c49b0938"
+                },
+                {
+                    "type": "operation",
+                    "label": "操作",
+                    "buttons": [
+                        {
+                            "label": "编辑",
+                            "type": "button",
+                            "actionType": "dialog",
+                            "level": "link",
+                            "dialog": {
+                                "title": "编辑",
+                                "body": [
+                                    {
+                                        "type": "form",
+                                        "api": {
+                                            "method": "post",
+                                            "url": "",
+                                            "messages": {},
+                                            "dataType": "json",
+                                            "data": {
+                                                "&": "$$"
+                                            }
+                                        },
+                                        "body": [
+                                            {
+                                                "label": "id",
+                                                "name": "id",
+                                                "type": "input-text",
+                                                "id": "u:ee29835932f9",
+                                                "hidden": true
+                                            },
+                                            {
+                                                "label": "页面编码",
+                                                "name": "pageCode",
+                                                "type": "input-text",
+                                                "id": "u:8e2a3c197be3",
+                                                "editorState": "default",
+                                                "readOnly": false,
+                                                "clearValueOnHidden": true,
+                                                "required": true,
+                                                "disabled": true
+                                            },
+                                            {
+                                                "label": "页面名称",
+                                                "name": "pageName",
+                                                "type": "input-text",
+                                                "id": "u:471e436f826c",
+                                                "editorState": "default",
+                                                "required": true
+                                            },
+                                            {
+                                                "label": "设计方式",
+                                                "name": "pageDesignMode",
+                                                "type": "select",
+                                                "id": "u:b19979fa3af7",
+                                                "multiple": false,
+                                                "source": {
+                                                    "url": "/sys/dict/getDictItems/PageDesignMode",
+                                                    "method": "get",
+                                                    "messages": {},
+                                                    "dataType": "form",
+                                                    "responseData": {
+                                                        "&": "${result}"
+                                                    }
+                                                },
+                                                "labelField": "text",
+                                                "valueField": "value",
+                                                "value": "AmisEditor",
+                                                "required": true,
+                                                "disabled": true
+                                            },
+                                            {
+                                                "label": "主题",
+                                                "name": "页面主题",
+                                                "type": "select",
+                                                "id": "u:f6e60ec5c70a",
+                                                "multiple": false,
+                                                "source": {
+                                                    "url": "/sys/dict/getDictItems/PageTheme",
+                                                    "method": "get",
+                                                    "messages": {},
+                                                    "dataType": "form",
+                                                    "responseData": {
+                                                        "&": "${result}"
+                                                    }
+                                                },
+                                                "labelField": "text",
+                                                "valueField": "value",
+                                                "value": "cxd",
+                                                "required": true
+                                            },
+                                            {
+                                                "label": "备注",
+                                                "name": "remark",
+                                                "type": "textarea",
+                                                "id": "u:d44626615f12",
+                                                "minRows": 3,
+                                                "maxRows": 20
+                                            }
+                                        ],
+                                        "id": "u:1b923b706173"
+                                    }
+                                ],
+                                "type": "dialog",
+                                "id": "u:0c497f218fcf"
+                            },
+                            "id": "u:ec9321650dec"
+                        },
+                        {
+                            "label": "查看",
+                            "type": "button",
+                            "actionType": "dialog",
+                            "level": "link",
+                            "dialog": {
+                                "type": "dialog",
+                                "title": "查看详情",
+                                "body": [
+                                    {
+                                        "type": "form",
+                                        "api": {
+                                            "method": "get",
+                                            "url": "",
+                                            "messages": {},
+                                            "dataType": "json",
+                                            "data": {
+                                                "&": "$$"
+                                            }
+                                        },
+                                        "body": [
+                                            {
+                                                "label": "id",
+                                                "name": "id",
+                                                "type": "input-text",
+                                                "id": "u:ee29835932f9",
+                                                "hidden": true
+                                            },
+                                            {
+                                                "label": "页面编码",
+                                                "name": "pageCode",
+                                                "type": "input-text",
+                                                "id": "u:8e2a3c197be3"
+                                            },
+                                            {
+                                                "label": "页面名称",
+                                                "name": "pageName",
+                                                "type": "input-text",
+                                                "id": "u:471e436f826c"
+                                            },
+                                            {
+                                                "label": "设计方式",
+                                                "name": "pageDesignMode",
+                                                "type": "select",
+                                                "id": "u:b19979fa3af7",
+                                                "multiple": false,
+                                                "source": {
+                                                    "url": "/sys/dict/getDictItems/PageDesignMode",
+                                                    "method": "get",
+                                                    "messages": {},
+                                                    "dataType": "form",
+                                                    "responseData": {
+                                                        "&": "${result}"
+                                                    }
+                                                },
+                                                "labelField": "text",
+                                                "valueField": "value",
+                                                "value": "AmisEditor"
+                                            },
+                                            {
+                                                "label": "选项",
+                                                "name": "页面主题",
+                                                "type": "select",
+                                                "id": "u:f6e60ec5c70a",
+                                                "multiple": false,
+                                                "source": {
+                                                    "url": "/sys/dict/getDictItems/PageTheme",
+                                                    "method": "get",
+                                                    "messages": {},
+                                                    "dataType": "form",
+                                                    "responseData": {
+                                                        "&": "${result}"
+                                                    }
+                                                },
+                                                "labelField": "text",
+                                                "valueField": "value",
+                                                "value": "cxd",
+                                                "required": true
+                                            },
+                                            {
+                                                "label": "备注",
+                                                "name": "remark",
+                                                "type": "textarea",
+                                                "id": "u:d44626615f12",
+                                                "minRows": 3,
+                                                "maxRows": 20
+                                            }
+                                        ],
+                                        "id": "u:1b923b706173",
+                                        "disabled": false,
+                                        "static": true
+                                    }
+                                ],
+                                "id": "u:eccc32ee38fa",
+                                "showCloseButton": false,
+                                "closeOnEsc": true,
+                                "showErrorMsg": true,
+                                "showLoading": true,
+                                "actions": [
+                                    {
+                                        "type": "button",
+                                        "label": "关闭",
+                                        "onEvent": {
+                                            "click": {
+                                                "actions": []
+                                            }
+                                        },
+                                        "id": "u:24b922423685",
+                                        "editorState": "default",
+                                        "close": true,
+                                        "level": "primary"
+                                    }
+                                ]
+                            },
+                            "id": "u:6604abfa032c"
+                        },
+                        {
+                            "type": "button",
+                            "label": "删除",
+                            "actionType": "",
+                            "level": "link",
+                            "className": "text-danger",
+                            "confirmText": "记录删除后将无法恢复，是否确认删除？",
+                            "api": {
+                                "method": "delete",
+                                "url": "",
+                                "messages": {},
+                                "dataType": "form",
+                                "responseData": null
+                            },
+                            "id": "u:025f8d11660a",
+                            "editorState": "default",
+                            "onEvent": {
+                                "click": {
+                                    "weight": 0,
+                                    "actions": [
+                                        {
+                                            "args": {
+                                                "options": {},
+                                                "api": {
+                                                    "url": "",
+                                                    "method": "delete",
+                                                    "messages": {},
+                                                    "dataType": "form"
+                                                }
+                                            },
+                                            "actionType": "ajax",
+                                            "outputVar": "responseResult"
+                                        },
+                                        {
+                                            "componentId": "u:0bd81628ec45",
+                                            "args": {},
+                                            "actionType": "submit"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    "id": "u:6b6d0f1846e5"
+                }
+            ],
+            "bulkActions": [
+                {
+                    "type": "button",
+                    "level": "danger",
+                    "label": "批量删除",
+                    "actionType": "ajax",
+                    "confirmText": "记录删除后将无法恢复，是否确认删除？",
+                    "api": {
+                        "method": "delete",
+                        "url": "",
+                        "dataType": "form"
+                    },
+                    "id": "u:0ea3751de623",
+                    "editorState": "default",
+                    "onEvent": {}
+                }
+            ],
+            "itemActions": [],
+            "filterSettingSource": [
+                "id",
+                "createBy",
+                "createTime",
+                "updateBy",
+                "updateTime",
+                "pageCode",
+                "pageName",
+                "pageDesignMode",
+                "pageTheme",
+                "pageSchema",
+                "pageAssets",
+                "remark"
+            ],
+            "features": [
+                "create",
+                "filter",
+                "bulkDelete",
+                "update",
+                "view",
+                "delete"
+            ],
+            "filterColumnCount": 3,
+            "filterEnabledList": [
+                {
+                    "label": "pageCode",
+                    "value": "pageCode"
+                },
+                {
+                    "label": "pageName",
+                    "value": "pageName"
+                }
+            ],
+            "headerToolbar": [
+                {
+                    "label": "新增",
+                    "type": "button",
+                    "actionType": "dialog",
+                    "level": "primary",
+                    "dialog": {
+                        "title": "新增",
+                        "body": [
+                            {
+                                "type": "form",
+                                "api": {
+                                    "method": "post",
+                                    "url": "",
+                                    "messages": {},
+                                    "dataType": "json",
+                                    "data": {
+                                        "&": "$$"
+                                    }
+                                },
+                                "body": [
+                                    {
+                                        "type": "input-text",
+                                        "name": "id",
+                                        "label": "id",
+                                        "id": "u:ee29835932f9",
+                                        "editorState": "default",
+                                        "hidden": true
+                                    },
+                                    {
+                                        "type": "input-text",
+                                        "name": "pageCode",
+                                        "label": "页面编码",
+                                        "id": "u:8e2a3c197be3",
+                                        "editorState": "default",
+                                        "required": true
+                                    },
+                                    {
+                                        "type": "input-text",
+                                        "name": "pageName",
+                                        "label": "页面名称",
+                                        "id": "u:471e436f826c",
+                                        "editorState": "default",
+                                        "required": true
+                                    },
+                                    {
+                                        "type": "select",
+                                        "label": "设计方式",
+                                        "name": "pageDesignMode",
+                                        "id": "u:b19979fa3af7",
+                                        "multiple": false,
+                                        "source": {
+                                            "url": "/sys/dict/getDictItems/PageDesignMode",
+                                            "method": "get",
+                                            "messages": {},
+                                            "dataType": "form",
+                                            "responseData": {
+                                                "&": "${result}"
+                                            }
+                                        },
+                                        "labelField": "text",
+                                        "valueField": "value",
+                                        "value": "AmisEditor",
+                                        "required": true
+                                    },
+                                    {
+                                        "type": "select",
+                                        "name": "页面主题",
+                                        "label": "主题",
+                                        "id": "u:f6e60ec5c70a",
+                                        "multiple": false,
+                                        "source": {
+                                            "url": "/sys/dict/getDictItems/PageTheme",
+                                            "method": "get",
+                                            "messages": {},
+                                            "dataType": "form",
+                                            "responseData": {
+                                                "&": "${result}"
+                                            }
+                                        },
+                                        "labelField": "text",
+                                        "valueField": "value",
+                                        "value": "cxd",
+                                        "required": true
+                                    },
+                                    {
+                                        "type": "textarea",
+                                        "name": "remark",
+                                        "label": "备注",
+                                        "id": "u:d44626615f12",
+                                        "minRows": 3,
+                                        "maxRows": 20
+                                    }
+                                ],
+                                "id": "u:1b923b706173"
+                            }
+                        ],
+                        "type": "dialog",
+                        "id": "u:6a97d0c9a7f5"
+                    },
+                    "id": "u:bc6d98e1793b"
+                },
+                "bulkActions"
+            ],
+            "filter": {
+                "title": "查询条件",
+                "columnCount": 3,
+                "mode": "horizontal",
+                "body": [
+                    {
+                        "type": "input-text",
+                        "label": "页面编码",
+                        "name": "pageCode",
+                        "id": "u:cae700691f9d",
+                        "editorState": "default",
+                        "clearable": true
+                    },
+                    {
+                        "type": "input-text",
+                        "label": "页面名称",
+                        "name": "pageName",
+                        "id": "u:4b1c5584f428",
+                        "editorState": "default",
+                        "clearable": true
+                    }
+                ],
+                "id": "u:0bd81628ec45",
+                "wrapWithPanel": true,
+                "static": false
+            },
+            "id": "u:6e8386255b21"
+        }
+    ],
+    "regions": [
+        "body"
+    ],
+    "id": "u:84fdd3b91c71",
+    "style": {
+        "boxShadow": " 0px 0px 0px 0px transparent"
+    }
+}
